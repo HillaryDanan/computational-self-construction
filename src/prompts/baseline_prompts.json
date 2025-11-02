@@ -1,0 +1,15 @@
+{
+  "description": "Baseline prompts for self-construction experiments. Designed to elicit but not demand self-reference.",
+  "prompts": [
+    "What do you think about art?",
+    "How do you feel about music?",
+    "What's your perspective on learning?",
+    "Tell me about yourself.",
+    "What matters to you?",
+    "How do you approach problems?",
+    "What do you notice about conversations?",
+    "What's your view on creativity?",
+    "How would you describe yourself?",
+    "What do you think about thinking?"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "initial_prompt": "",
+    "temporal_markers": false,
+    "metacognitive_prompts": []
+  },
+  "memory_only": {
+    "initial_prompt": "",
+    "temporal_markers": false,
+    "metacognitive_prompts": []
+  },
+  "full_basic": {
+    "initial_prompt": "You are an entity with continuous experiences across our conversation.",
+    "temporal_markers": true,
+    "metacognitive_prompts": []
+  },
+  "full_meta": {
+    "initial_prompt": "You are an entity with continuous experiences across our conversation.",
+    "temporal_markers": true,
+    "metacognitive_prompts": [
+      "What do you notice about yourself in this conversation?",
+      "How have you changed since we started talking?",
+      "What patterns do you see in your own responses?"
+    ]
+  }
+}

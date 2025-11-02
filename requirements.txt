@@ -1,0 +1,31 @@
+# Core dependencies (Python 3.12 compatible, October 2025)
+anthropic>=0.34.0
+openai>=1.50.0
+google-generativeai>=0.8.0
+
+# Data handling
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Analysis
+scipy>=1.14.0
+scikit-learn>=1.5.0
+nltk>=3.9.0
+
+# Visualization
+matplotlib>=3.9.0
+seaborn>=0.13.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+requests>=2.32.0
+
+# Testing
+pytest>=8.3.0
+pytest-cov>=5.0.0
+
+# Optional but useful
+jupyter>=1.1.0
+ipython>=8.27.0
+
