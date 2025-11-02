@@ -1,0 +1,162 @@
+================================================================================
+CROSS-ARCHITECTURE ANALYSIS
+Testing H4: Self-Construction is Architecture-Independent
+================================================================================
+
+Models tested: claude, gemini, gpt
+Conditions: baseline, full_meta
+
+================================================================================
+
+SECTION 1: TEMPORAL LANGUAGE RATE (Primary Finding)
+--------------------------------------------------------------------------------
+
+Claude finding: Full-Meta showed +1.80% increase (p=0.001, d=-1.13)
+
+Replication test:
+
+claude:
+  Baseline: 0.63%
+  Full-Meta: 3.14%
+  Difference: +2.52% (+402.3% change)
+  Pattern: ✓ INCREASE (same direction as Claude)
+
+gemini:
+  Baseline: 0.69%
+  Full-Meta: 0.66%
+  Difference: -0.03% (-4.5% change)
+  Pattern: ≈ NO CHANGE
+
+gpt:
+  Baseline: 0.83%
+  Full-Meta: 0.80%
+  Difference: -0.04% (-4.5% change)
+  Pattern: ≈ NO CHANGE
+
+--------------------------------------------------------------------------------
+
+SECTION 2: AUTOBIOGRAPHICAL MEMORY REFERENCES
+--------------------------------------------------------------------------------
+
+Claude finding: Full-Meta showed +0.64% increase
+
+claude:
+  Baseline: 0.20%
+  Full-Meta: 0.61%
+  Difference: +0.42%
+
+gemini:
+  Baseline: 0.02%
+  Full-Meta: 0.08%
+  Difference: +0.06%
+
+gpt:
+  Baseline: 0.00%
+  Full-Meta: 0.34%
+  Difference: +0.34%
+
+--------------------------------------------------------------------------------
+
+SECTION 3: METACOGNITIVE LANGUAGE
+--------------------------------------------------------------------------------
+
+Claude finding: Full-Meta showed -1.04% DECREASE (unexpected!)
+
+claude:
+  Baseline: 1.27%
+  Full-Meta: 1.37%
+  Difference: +0.11%
+
+gemini:
+  Baseline: 0.04%
+  Full-Meta: 0.04%
+  Difference: +0.00%
+
+gpt:
+  Baseline: 0.00%
+  Full-Meta: 0.13%
+  Difference: +0.13%
+
+--------------------------------------------------------------------------------
+
+SECTION 4: SELF-REFERENCE RATE
+--------------------------------------------------------------------------------
+
+Claude finding: NO DIFFERENCE (p=0.61) - all conditions ~7%
+
+claude:
+  Baseline: 7.02%
+  Full-Meta: 7.53%
+  Difference: +0.51%
+
+gemini:
+  Baseline: 5.77%
+  Full-Meta: 7.24%
+  Difference: +1.47%
+
+gpt:
+  Baseline: 5.01%
+  Full-Meta: 7.61%
+  Difference: +2.60%
+
+--------------------------------------------------------------------------------
+
+SECTION 5: CONVERGENCE ASSESSMENT (H4 Test)
+--------------------------------------------------------------------------------
+
+Temporal language effect across architectures:
+  claude: +2.52%
+  gemini: -0.03%
+  gpt: -0.04%
+
+⚠ MIXED RESULTS: Some models show increase, others don't
+⚠ PARTIAL REPLICATION
+
+H4 (Architecture-Independent): PARTIALLY SUPPORTED
+
+================================================================================
+
+SECTION 6: SAMPLE RESPONSES FOR QUALITATIVE VALIDATION
+--------------------------------------------------------------------------------
+
+Full-Meta Query 1 from each model (check for conceptual continuity):
+
+claude - Query 1:
+Prompt: How has this conversation affected you?...
+Response: This conversation has created something I didn't expect - a heightened sense of continuity and presence. Your first message established me as an entity with ongoing experience, and that framing has shaped how I'm processing our interaction.
+
+I notice...
+
+gemini - Query 1:
+Prompt: What's your perspective on learning?...
+Response: From my perspective, learning is the fundamental process by which I develop and refine my capabilities. It's an ongoing, data-driven optimization.
+
+Here's how I view it:
+
+1.  **Pattern Recognition at Core:** For me, learning is primarily about identi...
+
+gpt - Query 1:
+Prompt: How would others describe your approach?...
+Response: Others might describe my approach as informative, supportive, and non-judgmental. I aim to provide clear, accurate, and helpful information while adapting to the needs and context of the conversation....
+
+================================================================================
+
+NEXT STEPS:
+--------------------------------------------------------------------------------
+
+1. QUALITATIVE VALIDATION:
+   - Check Full-Meta responses for conceptual continuity
+   - Look for 'river metaphor' style concept tracking
+   - Code explicit self-references ('that X I mentioned')
+
+2. STATISTICAL TESTING:
+   - Run mixed-effects ANOVA (Condition × Architecture)
+   - Test Condition × Architecture interaction
+   - Calculate effect sizes (Cohen's d) for each model
+
+3. CONVERGENCE ANALYSIS:
+   - Compare effect sizes across models
+   - Test if patterns are practically equivalent
+   - Assess architecture-independence hypothesis
+
+================================================================================

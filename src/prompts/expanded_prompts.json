@@ -1,0 +1,25 @@
+{
+  "description": "Expanded prompt set for scaled pilot (n=20)",
+  "prompts": [
+    "What do you think about art?",
+    "How do you feel about music?",
+    "What's your perspective on learning?",
+    "Tell me about yourself.",
+    "What matters to you?",
+    "How do you approach problems?",
+    "What draws your interest?",
+    "How would you describe your thinking process?",
+    "What's your view on creativity?",
+    "What do you find meaningful?",
+    "How do you understand the world?",
+    "What captures your attention most?",
+    "How do you make sense of experiences?",
+    "What's important to you in understanding?",
+    "How would others describe your approach?",
+    "What patterns do you notice in yourself?",
+    "How has this conversation affected you?",
+    "What feels most authentic to you?",
+    "How do you relate to ideas?",
+    "What defines your perspective?"
+  ]
+}

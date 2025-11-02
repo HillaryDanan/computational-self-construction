@@ -17,12 +17,12 @@ class GeminiModel:
     Uses Google's generativeai library to interact with Gemini models.
     """
     
-    def __init__(self, model: str = "gemini-flash-2.5"):
+    def __init__(self, model: str = "gemini-2.5-flash"):
         """
         Initialize Gemini model.
         
         Args:
-            model: Model identifier (default: gemini-flash-2.5)
+            model: Model identifier (default: gemini-2.5-flash)
         """
         api_key = os.getenv('GOOGLE_API_KEY')
         if not api_key:
@@ -32,6 +32,7 @@ class GeminiModel:
         self.model = genai.GenerativeModel(model)
         self.name = "gemini"
         self.model_name = model
+        print(f"[DEBUG] Initialized Gemini with model: {model}")
     
     def query(
         self, 
@@ -45,6 +46,7 @@ class GeminiModel:
         Args:
             prompt: Query text
             context: Previous conversation history (for memory conditions)
+                     Format: [{'query': 'user msg', 'response': 'model msg'}, ...]
             max_tokens: Maximum response length
             
         Returns:
@@ -52,15 +54,20 @@ class GeminiModel:
         """
         # Gemini handles context differently - build full conversation
         if context:
+            # Convert context to Gemini chat history format
+            history = []
+            for exchange in context:
+                history.append({
+                    "role": "user",
+                    "parts": [exchange['query']]
+                })
+                history.append({
+                    "role": "model",
+                    "parts": [exchange['response']]
+                })
+            
             # Start chat with history
-            chat = self.model.start_chat(history=[
-                {
-                    "role": "user" if i % 2 == 0 else "model",
-                    "parts": [exchange['query'] if i % 2 == 0 else exchange['response']]
-                }
-                for i, exchange in enumerate(context)
-                for _ in [exchange]  # Unpack each exchange
-            ])
+            chat = self.model.start_chat(history=history)
             response = chat.send_message(prompt)
         else:
             # No context, single query
